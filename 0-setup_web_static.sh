@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 # setting up web static
+if command -v nginx >/dev/null 2>&1; then
+    echo ""
+else
+	sudo apt-get update
+	sudo apt-get install -y nginx
+
 mkdir -p /data/web_static/shared
 mkdir -p "/data/web_static/releases/test"
 echo "<html>
