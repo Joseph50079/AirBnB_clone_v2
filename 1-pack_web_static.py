@@ -11,6 +11,7 @@ def do_pack():
         Archive all web_static content with fabric api
 
     """
+    now = datetime.datetime.now()
     current = now.strftime("%Y%m%d%H%M%S")
     file = "web_static_{}.tgz".format(current)
     local('mkdir -p versions')
