@@ -3,11 +3,11 @@
 """A fabric file that archive and send's it to remote server"""
 
 from fabric.api import *
-from datetime import datetime.now
+from datetime import datetime
 
 
 def do_pack():
-    now = now.strftime("%Y%m%d%H%M%S")
+    now = datetime.now.strftime("%Y%m%d%H%M%S")
     file = web_static_f"{now}".tgz
     local('mkdir -p versions')
     correct = local('tar -czvf versions/{}".tgz web_static'.format(file))
