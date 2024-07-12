@@ -7,8 +7,12 @@ import datetime
 
 
 def do_pack():
-    now = now.strftime("%Y%m%d%H%M%S")
-    file = "web_static_{}.tgz".format(now)
+    """
+        Archive all web_static content with fabric api
+
+    """
+    current = now.strftime("%Y%m%d%H%M%S")
+    file = "web_static_{}.tgz".format(current)
     local('mkdir -p versions')
     correct = local('tar -czvf versions/{}".tgz web_static'.format(file))
     if correct is not None:
