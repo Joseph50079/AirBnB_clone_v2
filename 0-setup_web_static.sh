@@ -11,7 +11,7 @@ echo "<html>
 </html>" > /data/web_static/releases/test/index.html
 rm -rf /data/web_static/current
 touch /data/web_static/current
-ln -sf /data/web_static/current /data/web_static/releases/test/
+ln -sf /data/web_static/current /data/web_static/releases/test
 sudo chown -R ubuntu:ubuntu /data/
 HOSTNAME=$(hostname)
 echo "server {
