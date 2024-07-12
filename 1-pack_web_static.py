@@ -2,7 +2,7 @@
 
 """A fabric file that archive and send's it to remote server"""
 
-from Fabric.api import task
+from fabric import task
 
 @task
 def do_pack():
