@@ -6,4 +6,5 @@ from fabric.api import *
 
 
 def do_pack():
-    local('tar -czvf versions/web_static_"$(date +"%Y%m%d%H%M%S")".tgz web_static')
+    local('mkdir versions')
+    return local('tar -czvf versions/web_static_"$(date +"%Y%m%d%H%M%S")".tgz web_static')
