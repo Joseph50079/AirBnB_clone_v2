@@ -9,9 +9,7 @@ echo "<html>
     Holberton School
   </body>
 </html>" > /data/web_static/releases/test/index.html
-rm -rf /data/web_static/current
-touch /data/web_static/current
-ln -sf /data/web_static/current /data/web_static/releases/test
+sudo ln -sf /data/web_static/releases/test/ /data/web_static/current/
 sudo chown -R ubuntu:ubuntu /data/
 HOSTNAME=$(hostname)
 echo "server {
