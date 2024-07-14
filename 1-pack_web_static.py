@@ -15,8 +15,8 @@ def do_pack():
     current = now.strftime("%Y%m%d%H%M%S")
     file = "web_static_{}.tgz".format(current)
     local('mkdir -p versions')
-    correct = local('tar -czvf versions/{}".tgz web_static'.format(file))
+    correct = local('tar -czvf versions/{}" web_static'.format(file))
     if correct is not None:
-        return file
+        return "versions/{}".format(file)
     else:
         return None
