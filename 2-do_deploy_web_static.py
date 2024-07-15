@@ -27,7 +27,7 @@ def do_deploy(archive_path):
     if os.path.exists(archive_path):
         return False
     else:
-        put(archive_path, remote=/tmp/)
+        put(archive_path, remote='/tmp/')
         web_dir = archive_path.split('/')[1].split('.')[0]
         run('mkdir -p /data/web_static/releases/{}'.format(web_dir))
         run('tar -xvzf /tmp/{} -C /data/web_static/releases/{}/'.format(archive_path, web_dir))
