@@ -22,7 +22,12 @@ echo "server {
     listen [::]:80 default_server;
     root   /var/www/html;
     index  index.html index.htm;
-    
+    add_header X-Served-By $HOSTNAME;
+   
+    location / {
+    root /var/www/html;
+}
+
     location /hbnb_static { 
     	add_header X-Served-By $HOSTNAME;
 	alias /data/web_static/current/;
