@@ -35,7 +35,7 @@ def do_deploy(archive_path):
      
     """
 
-    if os.path.exists(archive_path):
+    if not os.path.exists(archive_path):
         return False
 
     try:
