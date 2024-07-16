@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 """Module for deloying local files to the server using Fabric API"""
 import os
