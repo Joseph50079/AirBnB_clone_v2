@@ -45,7 +45,7 @@ def do_deploy(archive_path):
         web_dir = archive_path.split('/')[-1].split('.')[0]
         run('mkdir -p /data/web_static/releases/{}'.format(web_dir))
         run('tar -xvzf /tmp/{} -C /data/web_static/releases/{}/'.format(archive_file, web_dir))
-        run('mv /data/web_static/releases/{}/web_static/* /data/web_static/releases/{}/'.format(web_dir, web_dir))
+        run('mv /data/web_static/releases/{}/web_static/* /data/web_static/releases/{}'.format(web_dir, web_dir))
         run('rm -rf /tmp/{}'.format(archive_file))
         run('rm -rf /data/web_static/releases/{}/web_static'.format(web_dir))
         run('rm -rf /data/web_static/current')
