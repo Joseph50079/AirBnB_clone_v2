@@ -2,7 +2,10 @@
 
 """Module for deloying local files to the server using Fabric API"""
 import os
-from fabric.api import *
+from fabric.api import env, run, put, sudo
+
+
+env.key_filename = '~/.ssh/id_rsa'
 env.hosts = ['52.201.156.75', '54.172.255.78']
 env.user = 'ubuntu'
 
