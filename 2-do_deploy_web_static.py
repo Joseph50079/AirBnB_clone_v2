@@ -15,14 +15,14 @@ def do_pack():
      Archive all web_static content with fabric api
 
     """
-    now = datetime.datetime.now()
-    current = now.strftime("%Y%m%d%H%M%S")
-    file = "web_static_{}.tgz".format(current)
-    local('mkdir -p versions')
-    correct = local("tar -czvf versions/{} web_static".format(file))
-    if correct is not None:
+    try:
+        now = datetime.datetime.now()
+        current = now.strftime("%Y%m%d%H%M%S")
+        file = "web_static_{}.tgz".format(current)
+        local('mkdir -p versions')
+        local("tar -czvf versions/{} web_static".format(file))
         return "versions/{}".format(file)
-    else:
+    except:
         return None
 
 
@@ -56,5 +56,5 @@ def do_deploy(archive_path):
         sudo('service nginx restart')
         return True
 
-    except BaseException:
+    except:
         return False
