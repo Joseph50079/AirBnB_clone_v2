@@ -69,4 +69,4 @@ def deploy():
         return False
     else:
         val = do_deploy(file)
-        return value
+        return val
