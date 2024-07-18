@@ -52,7 +52,7 @@ def do_deploy(archive_path):
         run('rm -rf /tmp/{}'.format(archive_file))
         run('rm -rf /data/web_static/releases/{}/web_static'.format(web_dir))
         run('rm -rf /data/web_static/current')
-        run('ln -sF /data/web_static/releases/{}\
+        run('ln -sF /data/web_static/releases/{}/\
             /data/web_static/current'.format(web_dir))
         return True
 
