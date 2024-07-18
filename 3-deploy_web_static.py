@@ -6,7 +6,7 @@ from fabric.api import env, run, put, sudo, local
 import datetime
 
 
-###env.key_filename = '~/.ssh/id_rsa'
+# env.key_filename = '~/.ssh/id_rsa'
 env.hosts = ['52.201.156.75', '54.172.255.78']
 env.user = 'ubuntu'
 
@@ -23,7 +23,7 @@ def do_pack():
         local('mkdir -p versions')
         local("tar -czvf versions/{} web_static".format(file))
         return "versions/{}".format(file)
-    except:
+    except Exception:
         return None
 
 
@@ -56,7 +56,7 @@ def do_deploy(archive_path):
             /data/web_static/current'.format(web_dir))
         return True
 
-    except:
+    except Exception:
         return False
 
 
