@@ -3,6 +3,7 @@
 """Module for deloying local files to the server using Fabric API"""
 import os
 from fabric.api import env, run, put, sudo
+import datetime
 
 
 env.key_filename = '~/.ssh/id_rsa'
