@@ -2,7 +2,7 @@
 
 """Module for deloying local files to the server using Fabric API"""
 import os
-from fabric.api import env, run, put, sudo
+from fabric.api import env, run, put, sudo, local
 import datetime
 
 
