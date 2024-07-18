@@ -54,7 +54,6 @@ def do_deploy(archive_path):
         run('rm -rf /data/web_static/current')
         run('ln -sF /data/web_static/releases/{}\
             /data/web_static/current'.format(web_dir))
-        sudo('service nginx restart')
         return True
 
     except BaseException:
@@ -66,7 +65,8 @@ def deploy():
     This method will do the execution og both do_pack and do_deploy
     """
     file = do_pack()
-    if file is None:
+    if not file:
         return False
     else:
-        return do_deploy(file)
+        val = do_deploy(file)
+        return value
