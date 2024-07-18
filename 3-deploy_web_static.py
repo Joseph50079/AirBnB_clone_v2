@@ -59,7 +59,7 @@ def do_deploy(archive_path):
     except BaseException:
         return False
 
-    
+
 def deploy():
     file = do_pack()
     if file is None:
