@@ -61,6 +61,9 @@ def do_deploy(archive_path):
 
 
 def deploy():
+    """
+    This method will do the execution og both do_pack and do_deploy
+    """
     file = do_pack()
     if file is None:
         return False
