@@ -22,10 +22,10 @@ def hbnb():
     return "HBNB"
 
 @app.route('/c/<text>', strict_slashes=False)
-def hbnb():
-    """hbnb route for hbnb page"""
+def C_text(text):
+    """C_text route for dynamic text page"""
 
-    return f"C {escape(text)}"
+    return f"C {escape(text).replace('_', ' ')}"
 
 
 if __name__ == '__main__':
