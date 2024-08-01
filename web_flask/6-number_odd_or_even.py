@@ -66,8 +66,8 @@ def number_template(n):
         abort(404)
 
 
-@app.route('/number_template/<n>', strict_slashes=False)
-def number_template(n):
+@app.route('/number_odd_or_even/<n>', strict_slashes=False)
+def number_odd_or_even(n):
     """
     n route for dynamic text page when n is an integer
 
