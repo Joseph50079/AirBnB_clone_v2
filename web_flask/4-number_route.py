@@ -41,7 +41,7 @@ def python_text(text):
 def number(n):
     """
     n route for dynamic text page when n is an integer
-    
+
     """
     try:
         num = int(n)
