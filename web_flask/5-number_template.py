@@ -50,6 +50,7 @@ def number(n):
     except ValueError:
         abort(404)
 
+
 @app.route('/number_template/<n>', strict_slashes=False)
 def number_template(n):
     """
@@ -59,7 +60,8 @@ def number_template(n):
     try:
         num = int(n)
 
-        return render_template('5-number.html', title='HBNB', message=f"Number: {num}")
+        return render_template(
+            '5-number.html', title='HBNB', message=f"Number: {num}")
     except ValueError:
         abort(404)
 
