@@ -22,7 +22,7 @@ def do_pack():
         local('mkdir -p versions')
         local("tar -czvf versions/{} web_static".format(file))
         return "versions/{}".format(file)
-    except:
+    except BaseException:
         return None
 
 
@@ -56,5 +56,5 @@ def do_deploy(archive_path):
         sudo('service nginx restart')
         return True
 
-    except:
+    except BaseException:
         return False
