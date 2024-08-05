@@ -70,7 +70,8 @@ class FileStorage:
             pass
 
     def delete(self, obj=None):
-        if obj is not None and obj.to_dict()['__class__'] in self.classes.keys():
+        if obj is not None and obj.to_dict(
+        )['__class__'] in self.classes.keys():
             key = obj.to_dict()['__class__'] + '.' + obj.id
             self.__objects.pop(key)
             self.save()
